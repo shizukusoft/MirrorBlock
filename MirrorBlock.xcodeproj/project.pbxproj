@@ -522,7 +522,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/zsh;
-			shellScript = "PATH=\"/opt/homebrew/bin:/usr/local/bin:$PATH\"\nif (( $+commands[nodenv] )); then\n    eval \"$(nodenv init -)\"\nelif [ -s \"$HOME/.nvm/nvm.sh\" ]; then\n    source \"$HOME/.nvm/nvm.sh\"\nfi\n\ncd \"MirrorBlock WebExtension\"\n\ncase $ACTION in\n  clean)\n    ;;\n  *)\n    yarn install || yarn upgrade dprint@^0.30.3 && yarn install\n    ;;\nesac\n";
+			shellScript = "PATH=\"/opt/homebrew/bin:/usr/local/bin:$PATH\"\nif (( $+commands[nodenv] )); then\n    eval \"$(nodenv init -)\"\nelif [ -s \"$HOME/.nvm/nvm.sh\" ]; then\n    source \"$HOME/.nvm/nvm.sh\"\nfi\n\ncd \"MirrorBlock WebExtension\"\n\ncase $ACTION in\n  clean)\n    ;;\n  *)\n    yarn up dprint@^0.30.3\n    yarn install\n    ;;\nesac\n";
 		};
 		1973BE4F28B7DC8F0005F604 /* Copy build to build-v3 */ = {
 			isa = PBXShellScriptBuildPhase;
