@@ -102,14 +102,6 @@
 		1973B0AD28B7CAD10005F604 /* MirrorBlockUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirrorBlockUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1973B0BE28B7CB020005F604 /* MirrorBlock Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "MirrorBlock Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1973B0C028B7CB020005F604 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
-		1973B0C328B7CB020005F604 /* _locales */ = {isa = PBXFileReference; lastKnownFileType = folder; path = _locales; sourceTree = "<group>"; };
-		1973B0C528B7CB020005F604 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
-		1973B0C728B7CB020005F604 /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = manifest.json; sourceTree = "<group>"; };
-		1973B0C928B7CB020005F604 /* background.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = background.js; sourceTree = "<group>"; };
-		1973B0CB28B7CB020005F604 /* content.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = content.js; sourceTree = "<group>"; };
-		1973B0CD28B7CB020005F604 /* popup.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = popup.html; sourceTree = "<group>"; };
-		1973B0CF28B7CB020005F604 /* popup.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = popup.css; sourceTree = "<group>"; };
-		1973B0D128B7CB020005F604 /* popup.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = popup.js; sourceTree = "<group>"; };
 		1973B0D328B7CB020005F604 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1973B11428B7DAAC0005F604 /* just.config.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = just.config.js; sourceTree = "<group>"; };
 		1973BD8528B7DAAE0005F604 /* .pnp.cjs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .pnp.cjs; sourceTree = "<group>"; };
@@ -251,24 +243,8 @@
 			children = (
 				1973B0C028B7CB020005F604 /* SafariWebExtensionHandler.swift */,
 				1973B0D328B7CB020005F604 /* Info.plist */,
-				1973B0C228B7CB020005F604 /* Resources */,
 			);
 			path = "MirrorBlock Extension";
-			sourceTree = "<group>";
-		};
-		1973B0C228B7CB020005F604 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				1973B0C328B7CB020005F604 /* _locales */,
-				1973B0C528B7CB020005F604 /* images */,
-				1973B0C728B7CB020005F604 /* manifest.json */,
-				1973B0C928B7CB020005F604 /* background.js */,
-				1973B0CB28B7CB020005F604 /* content.js */,
-				1973B0CD28B7CB020005F604 /* popup.html */,
-				1973B0CF28B7CB020005F604 /* popup.css */,
-				1973B0D128B7CB020005F604 /* popup.js */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		1973B11128B7DAAC0005F604 /* MirrorBlock WebExtension */ = {
