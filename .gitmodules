@@ -1,0 +1,3 @@
+[submodule "MirrorBlock WebExtension"]
+	path = MirrorBlock WebExtension
+	url = https://github.com/gaeulbyul/MirrorBlock.git
