@@ -11,9 +11,9 @@
 			isa = PBXAggregateTarget;
 			buildConfigurationList = 1973B0F728B7CF8E0005F604 /* Build configuration list for PBXAggregateTarget "MirrorBlock WebExtension" */;
 			buildPhases = (
-				1973B0FB28B7D1ED0005F604 /* ShellScript */,
-				1973B0FA28B7CF930005F604 /* ShellScript */,
-				1973BE4F28B7DC8F0005F604 /* ShellScript */,
+				1973B0FB28B7D1ED0005F604 /* Run yarn install */,
+				1973B0FA28B7CF930005F604 /* Run make */,
+				1973BE4F28B7DC8F0005F604 /* Copy build to build-v3 */,
 			);
 			dependencies = (
 			);
@@ -481,7 +481,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1973B0FA28B7CF930005F604 /* ShellScript */ = {
+		1973B0FA28B7CF930005F604 /* Run make */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -492,6 +492,7 @@
 				"$(SRCROOT)/MirrorBlock WebExtension/src",
 				"$(SRCROOT)/MirrorBlock WebExtension/node_modules",
 			);
+			name = "Run make";
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -502,7 +503,7 @@
 			shellPath = /bin/zsh;
 			shellScript = "PATH=\"/opt/homebrew/bin:/usr/local/bin:$PATH\"\nif (( $+commands[nodenv] )); then\n    eval \"$(nodenv init -)\"\nelif [ -s \"$HOME/.nvm/nvm.sh\" ]; then\n    source \"$HOME/.nvm/nvm.sh\"\nfi\n\ncd \"MirrorBlock WebExtension\"\n\ncase $ACTION in\n  clean)\n    make clean\n    ;;\n  build)\n    make build\n    ;;\n  *)\n    make\n    exit 1\n    ;;\nesac\n";
 		};
-		1973B0FB28B7D1ED0005F604 /* ShellScript */ = {
+		1973B0FB28B7D1ED0005F604 /* Run yarn install */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -513,6 +514,7 @@
 				"$(SRCROOT)/MirrorBlock WebExtension/package.json",
 				"$(SRCROOT)/MirrorBlock WebExtension/yarn.lock",
 			);
+			name = "Run yarn install";
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -520,9 +522,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/zsh;
-			shellScript = "PATH=\"/opt/homebrew/bin:/usr/local/bin:$PATH\"\nif (( $+commands[nodenv] )); then\n    eval \"$(nodenv init -)\"\nelif [ -s \"$HOME/.nvm/nvm.sh\" ]; then\n    source \"$HOME/.nvm/nvm.sh\"\nfi\n\ncd \"MirrorBlock WebExtension\"\n\ncase $ACTION in\n  clean)\n    ;;\n  *)\n    yarn upgrade dprint@^0.30.3\n    yarn install\n    ;;\nesac\n";
+			shellScript = "PATH=\"/opt/homebrew/bin:/usr/local/bin:$PATH\"\nif (( $+commands[nodenv] )); then\n    eval \"$(nodenv init -)\"\nelif [ -s \"$HOME/.nvm/nvm.sh\" ]; then\n    source \"$HOME/.nvm/nvm.sh\"\nfi\n\ncd \"MirrorBlock WebExtension\"\n\ncase $ACTION in\n  clean)\n    ;;\n  *)\n    yarn install || yarn upgrade dprint@^0.30.3 && yarn install\n    ;;\nesac\n";
 		};
-		1973BE4F28B7DC8F0005F604 /* ShellScript */ = {
+		1973BE4F28B7DC8F0005F604 /* Copy build to build-v3 */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -539,6 +541,7 @@
 				"$(SRCROOT)/MirrorBlock WebExtension/build/manifest-v3.json",
 				"$(SRCROOT)/MirrorBlock WebExtension/build/extoption.ts",
 			);
+			name = "Copy build to build-v3";
 			outputFileListPaths = (
 			);
 			outputPaths = (
