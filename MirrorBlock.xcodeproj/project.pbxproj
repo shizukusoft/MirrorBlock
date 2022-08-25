@@ -500,7 +500,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/zsh;
-			shellScript = "PATH=\"/opt/homebrew/bin:/usr/local/bin:$PATH\"\neval \"$(nodenv init -)\"\n\ncd \"MirrorBlock WebExtension\"\n\ncase $ACTION in\n  clean)\n    make clean\n    ;;\n  build)\n    make build\n    ;;\n  *)\n    make\n    exit 1\n    ;;\nesac\n";
+			shellScript = "PATH=\"/opt/homebrew/bin:/usr/local/bin:$PATH\"\nif (( $+commands[nodenv] )); then\n    eval \"$(nodenv init -)\"\nelif [ -s \"$HOME/.nvm/nvm.sh\" ]; then\n    source \"$HOME/.nvm/nvm.sh\"\nfi\n\ncd \"MirrorBlock WebExtension\"\n\ncase $ACTION in\n  clean)\n    make clean\n    ;;\n  build)\n    make build\n    ;;\n  *)\n    make\n    exit 1\n    ;;\nesac\n";
 		};
 		1973B0FB28B7D1ED0005F604 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -520,7 +520,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/zsh;
-			shellScript = "PATH=\"/opt/homebrew/bin:/usr/local/bin:$PATH\"\neval \"$(nodenv init -)\"\n\ncd \"MirrorBlock WebExtension\"\n\ncase $ACTION in\n  clean)\n    ;;\n  *)\n    exec -c yarn install --immutable\n    ;;\nesac\n";
+			shellScript = "PATH=\"/opt/homebrew/bin:/usr/local/bin:$PATH\"\nif (( $+commands[nodenv] )); then\n    eval \"$(nodenv init -)\"\nelif [ -s \"$HOME/.nvm/nvm.sh\" ]; then\n    source \"$HOME/.nvm/nvm.sh\"\nfi\n\ncd \"MirrorBlock WebExtension\"\n\ncase $ACTION in\n  clean)\n    ;;\n  *)\n    exec -c yarn install --immutable\n    ;;\nesac\n";
 		};
 		1973BE4F28B7DC8F0005F604 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
