@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -417,7 +417,7 @@
 				};
 			};
 			buildConfigurationList = 1973B08728B7CAD00005F604 /* Build configuration list for PBXProject "MirrorBlock" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 11.4";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
