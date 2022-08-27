@@ -500,8 +500,8 @@
 				"$(SRCROOT)/MirrorBlock WebExtension/build-v3",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/zsh;
-			shellScript = "PATH=\"/opt/homebrew/bin:/usr/local/bin:$PATH\"\nif (( $+commands[nodenv] )); then\n    eval \"$(nodenv init -)\"\nelif [ -s \"$HOME/.nvm/nvm.sh\" ]; then\n    source \"$HOME/.nvm/nvm.sh\"\nfi\n\ncd \"MirrorBlock WebExtension\"\n\ncase $ACTION in\n  clean)\n    make clean\n    ;;\n  build)\n    make build\n    ;;\n  *)\n    make\n    exit 1\n    ;;\nesac\n";
+			shellPath = "/usr/bin/env -i ACTION=$ACTION zsh";
+			shellScript = "PATH=\"/opt/homebrew/bin:/usr/local/bin:$PATH\"\nif (( $+commands[nodenv] )); then\n    eval \"$(nodenv init -)\"\nelif [ -s \"$HOME/.nvm/nvm.sh\" ]; then\n    source \"$HOME/.nvm/nvm.sh\"\nfi\n\ncd \"MirrorBlock WebExtension\"\n\ncase $ACTION in\n  clean)\n    make clean\n    ;;\n  build|archive)\n    make build\n    ;;\n  *)\n    make\n    exit 1\n    ;;\nesac\n";
 		};
 		1973B0FB28B7D1ED0005F604 /* Run yarn install */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -521,7 +521,7 @@
 				"$(SRCROOT)/MirrorBlock WebExtension/node_modules",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/zsh;
+			shellPath = "/usr/bin/env -i zsh";
 			shellScript = "PATH=\"/opt/homebrew/bin:/usr/local/bin:$PATH\"\nif (( $+commands[nodenv] )); then\n    eval \"$(nodenv init -)\"\nelif [ -s \"$HOME/.nvm/nvm.sh\" ]; then\n    source \"$HOME/.nvm/nvm.sh\"\nfi\n\ncd \"MirrorBlock WebExtension\"\n\ncase $ACTION in\n  clean)\n    ;;\n  *)\n    exec -c yarn up dprint@^0.30.3\n    exec -c yarn install\n    ;;\nesac\n";
 		};
 		1973BE4F28B7DC8F0005F604 /* Copy build to build-v3 */ = {
